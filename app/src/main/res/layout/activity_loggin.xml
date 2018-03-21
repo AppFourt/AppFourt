@@ -30,7 +30,7 @@
 
         <EditText
             android:id="@+id/etUsuario"
-            android:layout_width="wrap_content"
+            android:layout_width="198dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
@@ -53,7 +53,7 @@
 
         <EditText
             android:id="@+id/etClave"
-            android:layout_width="wrap_content"
+            android:layout_width="197dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
