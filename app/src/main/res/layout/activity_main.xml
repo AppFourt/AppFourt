@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,12 +7,10 @@
     tools:context="com.ediertamayo.appfourt.MainActivity">
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
-        android:layout_height="17dp"
-        android:text="ballaaaa"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-</android.support.constraint.ConstraintLayout>
+        android:layout_height="wrap_content"
+        android:text="En este espacio se mostraran los diferentes filtros para las personas que visiten la zona de comidas, los filtros pordran ser por ejemplo: Por tiempo, Por precio, Por recomendados."
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="42dp" />
+</LinearLayout>
