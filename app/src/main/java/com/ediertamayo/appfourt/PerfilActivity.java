@@ -3,6 +3,7 @@ package com.ediertamayo.appfourt;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -60,5 +61,21 @@ public class PerfilActivity extends AppCompatActivity {
             finish();
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
+            Intent intent = new Intent(PerfilActivity.this,MainActivity.class);
+            intent.putExtra("usuarioP",usuarioP);
+            intent.putExtra("claveP",claveP);
+            intent.putExtra("nombreP",nombreP);
+            intent.putExtra("emailP",emailP);
+            setResult(RESULT_OK,intent);
+            onBackPressed();
+            finish();
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }
