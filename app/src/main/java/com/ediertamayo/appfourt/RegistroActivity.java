@@ -13,6 +13,7 @@ public class RegistroActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
+        getSupportActionBar().setTitle("Registro");
 
         etUsuario=findViewById(R.id.etUsuario);
         etClave=findViewById(R.id.etClave);
@@ -26,8 +27,10 @@ public class RegistroActivity extends AppCompatActivity {
                 &&!etRepClave.getText().toString().equals("")&&!etClave.getText().toString().equals("")){
             if(etClave.getText().toString().equals(etRepClave.getText().toString())){
                 Intent intent=new Intent();
-                intent.putExtra("retUsuario",etUsuario.getText().toString());
-                intent.putExtra("retClave",etClave.getText().toString());
+                intent.putExtra("usuarioR",etUsuario.getText().toString());
+                intent.putExtra("claveR",etClave.getText().toString());
+                intent.putExtra("nombreR",etNombre.getText().toString());
+                intent.putExtra("emailR",etEmail.getText().toString());
                 setResult(RESULT_OK,intent);
                 finish();
             }else{
