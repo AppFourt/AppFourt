@@ -25,16 +25,16 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="right"
-            android:text="Usuario:"
+            android:text="Email:"
             android:textSize="30dp" />
 
         <EditText
-            android:id="@+id/etUsuario"
+            android:id="@+id/etEmail"
             android:layout_width="198dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
-            android:inputType="textPersonName" />
+            android:inputType="textEmailAddress" />
     </LinearLayout>
 
     <LinearLayout

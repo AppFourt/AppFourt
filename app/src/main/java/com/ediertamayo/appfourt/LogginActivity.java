@@ -8,14 +8,14 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class LogginActivity extends AppCompatActivity {
-    EditText etUsuario,etClave;
+    EditText etEmail,etClave;
     String usuarioL;
     String claveL,nombreL,emailL;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loggin);
-        etUsuario=findViewById(R.id.etUsuario);
+        etEmail=findViewById(R.id.etEmail);
         etClave=findViewById(R.id.etClave);
     }
 
@@ -38,23 +38,22 @@ public class LogginActivity extends AppCompatActivity {
             emailL=String.valueOf(data.getExtras().getString("emailM"));
         }else if(requestCode==2 && resultCode==RESULT_CANCELED) {
             finish();
-        } else{
-            if (resultCode == RESULT_CANCELED){
+        } else if (resultCode == RESULT_CANCELED){
                 Toast.makeText(LogginActivity.this, "Falló registro",
                         Toast.LENGTH_SHORT).show();
-            }
+
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
 
     public void ingresar(View view) {
-        if(etUsuario.getText().toString().equals(usuarioL)&&etClave.getText().toString().equals(claveL)){
+        if(etEmail.getText().toString().equals(emailL)&&etClave.getText().toString().equals(claveL)){
             Intent intent=new Intent(LogginActivity.this,MainActivity.class);
             intent.putExtra("usuarioL",usuarioL);
             intent.putExtra("claveL",claveL);
             intent.putExtra("nombreL",claveL);
             intent.putExtra("emailL",claveL);
-            etUsuario.setText("");
+            etEmail.setText("");
             etClave.setText("");
             startActivityForResult(intent,2);
         }else{
